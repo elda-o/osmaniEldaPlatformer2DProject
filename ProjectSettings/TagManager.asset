@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Background
+  - Bullet
+  - Container
+  - Wall
+  - Monster
+  - Obstacle
+  - Platform
+  - Ability
   layers:
   - Default
   - TransparentFX
@@ -41,4 +49,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3219231709
+    locked: 0
+  - name: Ground
+    uniqueID: 3229599351
+    locked: 0
+  - name: Player
+    uniqueID: 697061929
     locked: 0
