@@ -18,10 +18,10 @@ public class NeoEssenceBehaviour : MonoBehaviour
 
             Controller.UpdateNE();
             Controller.UpdateScore();
-
+Destroy(gameObject);
            
         } 
-        Destroy(gameObject);
+        
     }
 
     void Update()

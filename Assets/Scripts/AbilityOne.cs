@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class AbilityOne : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.transform.tag == "Monster")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
+ 
 }

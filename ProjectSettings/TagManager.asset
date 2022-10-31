@@ -13,6 +13,9 @@ TagManager:
   - Obstacle
   - Platform
   - Ability
+  - NoSpawn
+  - FallGround
+  - NSObstacle
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Platform
   - 
   - 
   - 

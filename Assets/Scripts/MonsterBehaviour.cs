@@ -14,6 +14,7 @@ public class MonsterBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.name);
 
         if (collision.transform.tag == "Player")
         {
@@ -22,8 +23,10 @@ public class MonsterBehaviour : MonoBehaviour
 
         else
         {
+            Debug.Log("motherfucker");
             Destroy(gameObject);
         }
+        
 
 if (collision.transform.tag == "Bullet")
         {

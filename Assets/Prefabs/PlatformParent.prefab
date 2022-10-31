@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4550938239885541269}
   - component: {fileID: 6158067038345136440}
   - component: {fileID: 7789658475128258734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformParent
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4659507144601355709}
   - component: {fileID: 4659507144601355706}
   - component: {fileID: 8050927588085440973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FinalGround (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741066512065347485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NextFloorSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

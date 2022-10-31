@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class NoSpawn : MonoBehaviour
 {
-    GameObject Platform;
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Monster")
         {
-            Destroy(collision.gameObject);
-            Destroy(Platform);
-        }
-        if (collision.tag == "Obstacle")
-        {
+        //    Debug.Log("Destroyeeed");
             Destroy(collision.gameObject);
         }
-      
+        //if (collision.tag == "Obstacle")
+        //{
+        //    Destroy(collision.gameObject);
+        //}
+        //if (collision.tag == "Platform")
+        //{
+        //    Destroy(collision.gameObject);
+        //}
+        //if (collision.tag == "NeoEssence")
+        //{
+        //    Debug.Log("Destroyeeed");
+        //    Destroy(collision.gameObject);
+        //}
+        //if (collision.tag == "FallGround")
+        //{
+        //    Debug.Log("Destroyeeed");
+        //    Destroy(collision.gameObject);
+        //}
     }
     void Start()
     {

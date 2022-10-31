@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8608003887332289010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NextSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,8 @@ GameObject:
   - component: {fileID: 6325030759472457587}
   - component: {fileID: 822646387268453446}
   - component: {fileID: 2330134221936967467}
-  m_Layer: 0
+  - component: {fileID: 455672492269514140}
+  m_Layer: 6
   m_Name: NoSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +103,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a9c97ec8d09af4a8389841f11aae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &455672492269514140
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754393645232562568}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6976438838035678171
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +136,7 @@ GameObject:
   - component: {fileID: 6976438838035678117}
   - component: {fileID: 6976438838035678119}
   - component: {fileID: 4973570904220479079}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FallGround
   m_TagString: Respawn
   m_Icon: {fileID: 0}
@@ -240,9 +262,9 @@ GameObject:
   - component: {fileID: 382278962592374000}
   - component: {fileID: 3490095283249682018}
   - component: {fileID: -189356517360829225}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FallParent
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

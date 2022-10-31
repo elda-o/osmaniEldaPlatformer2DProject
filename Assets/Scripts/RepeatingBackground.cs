@@ -6,7 +6,7 @@ public class RepeatingBackground : MonoBehaviour
 {
 
     public float ScrollSpeed;
-    public float ScrollWidth = 17.854f;
+    public float ScrollWidth = 19.144f;
     public GameController controller;
 
     // Start is called before the first frame update
@@ -20,16 +20,21 @@ public class RepeatingBackground : MonoBehaviour
     {
         if (controller.GameStarted)
         {
-            Vector2 pos = transform.position;
-            pos.x -= ScrollSpeed * Time.deltaTime;
+           
 
-
-            if (transform.position.x < -ScrollWidth)
+            if (transform.position.x < -19.144)
             {
-                Offscreen(ref pos);
+                transform.position = new Vector3(19.144f, 0.401f, 0);
+                Debug.Log(transform.position);
+            }
+            else
+            {
+                Vector2 pos = transform.position;
+                pos.x -= ScrollSpeed * Time.deltaTime;
+                   transform.position = pos;
             }
 
-            transform.position = pos;
+           
         }
     }
 

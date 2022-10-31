@@ -17,9 +17,18 @@ public class PlayerBehaviour : MonoBehaviour
     // Rigidbody2D.AddForce (Vector2 Force);
     public bool Grounded;
     public float Speed = 3;
+    public bool IsFlying;
     void Start()
     {
-        
+        GameController.Scoring = 0;
+    }
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyUp(KeyCode.Space) && IsFlying == true)
+        {
+            rb.velocity = Vector2.zero;
+            IsFlying = false;
+        }
     }
 
     // Update is called once per frame
@@ -46,21 +55,29 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
 
-         if (transform.position.y >= MaxY)
+        if (transform.position.y >= MaxY && IsFlying == true)
             {
                 transform.position = new Vector2(transform.position.x, MaxY);
+
             }
 
-        if (Input.GetKey(KeyCode.Space) && CanFly == true)
+        if (Input.GetKeyDown(KeyCode.Space) && CanFly == true)
         {
             rb.AddForce(Vector2.up * FlyForce);
-
+            IsFlying = true;
+            Debug.Log(CanFly);
           
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && IsFlying == true)
         {
             rb.velocity = Vector2.zero;
+            IsFlying = false;
+        }
+
+        if (IsFlying == true)
+        {
+            rb.velocity = new Vector2 (0, 100);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -88,9 +105,15 @@ public class PlayerBehaviour : MonoBehaviour
             Grounded = true;
         }
 
+        if (collision.gameObject.tag == "Platform")
+        {
+            Grounded = true;
+        }
+
         if (collision.gameObject.tag == "Respawn")
         {
-            SceneManager.LoadScene(0);
+            //GameController.HighScoreUpdate();
+            SceneManager.LoadScene(2);
         }
 
         Debug.Log("I'm colliding yay!");
@@ -99,10 +122,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Platform")
         {
             Grounded = false;
         }
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
