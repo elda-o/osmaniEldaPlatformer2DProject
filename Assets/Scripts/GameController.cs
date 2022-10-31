@@ -87,6 +87,11 @@ public class GameController : MonoBehaviour
                 InvokeRepeating("UpdateScore", 2f, 5f);
             }
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
     public void UpdateNE()
     {
