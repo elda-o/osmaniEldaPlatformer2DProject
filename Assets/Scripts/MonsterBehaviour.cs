@@ -21,7 +21,7 @@ public class MonsterBehaviour : MonoBehaviour
             Controller.LoadLevel();
         }
 
-        else
+        else if(collision.tag == "Killbox")
         {
             Debug.Log("motherfucker");
             Destroy(gameObject);

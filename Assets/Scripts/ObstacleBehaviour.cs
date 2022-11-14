@@ -17,5 +17,9 @@ public class ObstacleBehaviour : MonoBehaviour
             Controller.LoadLevel();
         }
 
+        if (collision.transform.tag == "Ability2")
+        {
+            Destroy(gameObject);
+        }
     }
 }

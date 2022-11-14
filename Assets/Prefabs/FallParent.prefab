@@ -41,8 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6325030759472457587}
   - component: {fileID: 822646387268453446}
-  - component: {fileID: 2330134221936967467}
   - component: {fileID: 455672492269514140}
+  - component: {fileID: 7063228622608986607}
   m_Layer: 6
   m_Name: NoSpawn
   m_TagString: Untagged
@@ -91,18 +91,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.948038, y: 6.4771833}
   m_EdgeRadius: 0
---- !u!114 &2330134221936967467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4754393645232562568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1a9c97ec8d09af4a8389841f11aae26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &455672492269514140
 Rigidbody2D:
   serializedVersion: 4
@@ -124,6 +112,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7063228622608986607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754393645232562568}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e209713650f57ba49a26d5c4bed7edb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6976438838035678171
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1065367945
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 535007597, guid: c078dc1d48326164b9190c4f6dee6794, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -277,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7176921361604326987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.081576, y: 10.699381, z: 0.17555815}
+  m_LocalPosition: {x: 11.081576, y: 10.699381, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

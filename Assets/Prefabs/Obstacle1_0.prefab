@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6702229699634440989}
   m_Layer: 0
   m_Name: Obstacle1_0
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 697061929
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1447867685, guid: 108a8788426973d4bb1f2caa3ac7dcd8, type: 3}
   m_Color: {r: 0.96101224, g: 1, b: 0, a: 1}
@@ -223,7 +223,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.15749788, y: 0.56999207}
+  m_Offset: {x: 0.14228845, y: 0.5091539}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -234,7 +234,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.664842, y: 3.7899585}
+  m_Size: {x: 7.0106797, y: 2.268991}
   m_EdgeRadius: 0
 --- !u!114 &2743523587793776186
 MonoBehaviour:

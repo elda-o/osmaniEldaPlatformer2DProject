@@ -5,10 +5,13 @@ using UnityEngine;
 public class NeoEssenceBehaviour : MonoBehaviour
 {
     public GameObject NeoEssence;
-    public GameController Controller;
+    public ScoreController Controller;
+    public GameController ControllerNE;
     void Start()
     {
-        Controller = GameObject.FindObjectOfType<GameController>();
+        Controller = GameObject.FindObjectOfType<ScoreController>();
+        ControllerNE = GameObject.FindObjectOfType<GameController>();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,9 +19,9 @@ public class NeoEssenceBehaviour : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
 
-            Controller.UpdateNE();
+            ControllerNE.UpdateNE();
             Controller.UpdateScore();
-Destroy(gameObject);
+            Destroy(gameObject);
            
         } 
         

@@ -6,7 +6,7 @@ using TMPro;
 
 public class GameOver : MonoBehaviour
 {
-    public GameController gameController;
+    public ScoreController ScoreController;
     public TMP_Text Score;
     public TMP_Text HighScore;
     public float Scores;
@@ -15,15 +15,17 @@ public class GameOver : MonoBehaviour
      void Start()
     {
         Application.targetFrameRate = 60;
-        gameController = GetComponent<GameController>();
-        Scores = GameController.Scoring;
-        HighScores = GameController.HighScore;
+        ScoreController = GetComponent<ScoreController>();
+        Scores = ScoreController.Scoring;
+        HighScores = ScoreController.HighScore;
         UpdateScore();
 
     }
     public void StartGame()
-    {
+    {   
+        ScoreController.Scoring = 0;
         SceneManager.LoadScene(1);
+        
     }
 
     public void QuitGame()

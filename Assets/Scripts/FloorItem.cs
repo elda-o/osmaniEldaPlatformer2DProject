@@ -26,7 +26,9 @@ public class FloorItem : MonoBehaviour
 
     void SpawnNewThing()
     {
+        
         GameObject NextItem = SpawnManager.Instance.SelectNewObjectToSpawn();
+        Debug.Log(NextItem.name);
         Instantiate(NextItem, SpawnPoint.transform.position, Quaternion.identity);
     }
 

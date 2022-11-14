@@ -18,18 +18,17 @@ public class PlayerBehaviour : MonoBehaviour
     public bool Grounded;
     public float Speed = 3;
     public bool IsFlying;
+    public ManaBar MB;
+    public float FlyInterval;
+    public float CurrentFlyInterval;
+    bool StopFly;
     void Start()
     {
-        GameController.Scoring = 0;
+        
+        CurrentFlyInterval = FlyInterval;
     }
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyUp(KeyCode.Space) && IsFlying == true)
-        {
-            rb.velocity = Vector2.zero;
-            IsFlying = false;
-        }
-    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -39,61 +38,94 @@ public class PlayerBehaviour : MonoBehaviour
         //newPos.x += xMove * Speed * Time.deltaTime;
         //gameObject.transform.position = newPos;
 
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow )) && Grounded)
+        if ((Input.GetKeyDown(KeyCode.W)  && Grounded))
         {
             rb.AddForce(Vector2.up * JumpForce * 1.2f);
            
 
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (HasStartedGame == false)
-            {
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    if (HasStartedGame == false)
+        //    {
                 PlayerStarted?.Invoke();
                 HasStartedGame = true;
-            }
-        }
+        //    }
+        //}
 
-        if (transform.position.y >= MaxY && IsFlying == true)
-            {
-                transform.position = new Vector2(transform.position.x, MaxY);
+        //if (transform.position.y >= MaxY && IsFlying == true)
+        //    {
+        //        transform.position = new Vector2(transform.position.x, MaxY);
 
-            }
+        //    }
 
-        if (Input.GetKeyDown(KeyCode.Space) && CanFly == true)
-        {
-            rb.AddForce(Vector2.up * FlyForce);
-            IsFlying = true;
-            Debug.Log(CanFly);
-          
-        }
+        //if (Input.GetKey(KeyCode.Space) && CanFly == true)
+        //{
+ 
+        //    if (MB.Mana.value >=1)
+        //    {
+        //      rb.velocity += new Vector2(0, FlyForce);
+        //      IsFlying = true;
+        //        StopFly = true;
+        //    }
+        //    else if(StopFly)
+        //    {
+        //        StopFlying();
+        //    }
 
-        if (Input.GetKeyUp(KeyCode.Space) && IsFlying == true)
-        {
-            rb.velocity = Vector2.zero;
-            IsFlying = false;
-        }
+        //}
 
-        if (IsFlying == true)
-        {
-            rb.velocity = new Vector2 (0, 100);
-        }
+        //if (Input.GetKeyUp(KeyCode.Space) && IsFlying == true)
+        //{
+        //    StopFlying();
+        //}
+
+        //if (IsFlying == true)
+        //{
+        //  if(CurrentFlyInterval > 0)
+        //    {
+        //        CurrentFlyInterval -= Time.deltaTime;
+        //    }
+        //  else
+        //    {
+        //        MB.Mana.value -= 1;
+        //        CurrentFlyInterval = FlyInterval;
+        //    }
+        //}
 
         if (Input.GetMouseButtonDown(0))
         {
-            FirePoint.Fire();
+             if (MB.Mana.value >= 3)
+            {
+                FirePoint.Fire();
+                MB.Mana.value -= 3;
+            }
 
         }
 
         if (Input.GetKeyDown(KeyCode.Q)){
 
-            FirePoint.FireAbilityOne();
+           
+            if (MB.Mana.value >=3)
+            {
+                FirePoint.FireAbilityOne();
+                MB.Mana.value -= 3;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            FirePoint.FireAbilityTwo();
+            if (MB.Mana.value >= 3)
+            {
+                FirePoint.FireAbilityTwo();
+                MB.Mana.value -= 3;
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Space) && IsFlying == true)
+        {
+            rb.velocity = Vector2.zero;
+            IsFlying = false;
         }
 
     }
@@ -113,7 +145,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "Respawn")
         {
             //GameController.HighScoreUpdate();
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
 
         Debug.Log("I'm colliding yay!");
@@ -137,5 +169,12 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    void StopFlying()
+    {
+        rb.velocity = Vector2.zero;
+        IsFlying = false;
+        CurrentFlyInterval = FlyInterval;
+        StopFly = false;
+    }
 
 }

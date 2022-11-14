@@ -22,9 +22,9 @@ public class RepeatingBackground : MonoBehaviour
         {
            
 
-            if (transform.position.x < -19.144)
+            if (transform.position.x < -19)
             {
-                transform.position = new Vector3(19.144f, 0.401f, 0);
+                transform.position = new Vector3(19f, 0.401f, 0);
                 Debug.Log(transform.position);
             }
             else

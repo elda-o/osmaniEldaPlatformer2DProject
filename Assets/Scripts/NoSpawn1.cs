@@ -9,18 +9,25 @@ public class NoSpawn1 : MonoBehaviour
     {
         if (collision.tag == "Monster")
         {
-            Debug.Log("Destroyeeed");
+            Debug.Log("TouchMonster");
             Destroy(collision.gameObject);
         }
-        if (collision.tag == "Obstacle")
-        {
-            Destroy(collision.gameObject);
-        }
+        //if (collision.tag == "Obstacle")
+        //{
+        //    Debug.Log("TouchObstacle");
+        //    Destroy(collision.gameObject);
+        //}
         if (collision.tag == "Platform")
         {
+            Debug.Log("TouchPlatform");
             Destroy(collision.gameObject);
         }
-        
+        if (collision.tag == "NeoEssence")
+        {
+            Debug.Log("TouchNE");
+            Destroy(collision.gameObject);
+        }
+
     }
     void Start()
     {

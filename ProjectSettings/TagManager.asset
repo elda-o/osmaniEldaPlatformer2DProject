@@ -16,6 +16,8 @@ TagManager:
   - NoSpawn
   - FallGround
   - NSObstacle
+  - Killbox
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -59,6 +61,12 @@ TagManager:
   - name: Ground
     uniqueID: 3229599351
     locked: 0
+  - name: NeoEssence
+    uniqueID: 3535911779
+    locked: 0
   - name: Player
     uniqueID: 697061929
+    locked: 0
+  - name: Top
+    uniqueID: 2975110085
     locked: 0
