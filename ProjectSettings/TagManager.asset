@@ -19,6 +19,7 @@ TagManager:
   - Killbox
   - Enemy
   - Ability2
+  - Music
   layers:
   - Default
   - TransparentFX

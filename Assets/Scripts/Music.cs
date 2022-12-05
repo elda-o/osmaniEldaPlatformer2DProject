@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
+    public static Music MusicInstance;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (MusicInstance == null)
+        {
+            MusicInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
     }
 
