@@ -18,6 +18,7 @@ TagManager:
   - NSObstacle
   - Killbox
   - Enemy
+  - Ability2
   layers:
   - Default
   - TransparentFX

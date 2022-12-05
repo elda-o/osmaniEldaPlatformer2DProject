@@ -26,7 +26,10 @@ public class MonsterBehaviour : MonoBehaviour
             Debug.Log("motherfucker");
             Destroy(gameObject);
         }
-        
+        else
+        {
+            Destroy(gameObject);
+        }
 
 if (collision.transform.tag == "Bullet")
         {

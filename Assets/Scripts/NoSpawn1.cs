@@ -12,11 +12,11 @@ public class NoSpawn1 : MonoBehaviour
             Debug.Log("TouchMonster");
             Destroy(collision.gameObject);
         }
-        //if (collision.tag == "Obstacle")
-        //{
-        //    Debug.Log("TouchObstacle");
-        //    Destroy(collision.gameObject);
-        //}
+        if (collision.tag == "Obstacle")
+        {
+            Debug.Log("TouchObstacle");
+            Destroy(collision.gameObject);
+        }
         if (collision.tag == "Platform")
         {
             Debug.Log("TouchPlatform");

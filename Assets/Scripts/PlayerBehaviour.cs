@@ -17,15 +17,21 @@ public class PlayerBehaviour : MonoBehaviour
     // Rigidbody2D.AddForce (Vector2 Force);
     public bool Grounded;
     public float Speed = 3;
-    public bool IsFlying;
-    public ManaBar MB;
-    public float FlyInterval;
-    public float CurrentFlyInterval;
-    bool StopFly;
+    //public bool IsFlying;
+    //public ManaBar MB;
+    //public float FlyInterval;
+    //public float CurrentFlyInterval;
+    public Animator Run;
+    public bool IsCloseToPortal;
+    public Transform TargetPos;
+    //public AudioClip DeathSound;
+    //public AudioSource Death;
+
+    // bool StopFly;
     void Start()
     {
-        
-        CurrentFlyInterval = FlyInterval;
+        Run = GetComponent<Animator>();
+        //CurrentFlyInterval = FlyInterval;
     }
 
 
@@ -33,6 +39,11 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (IsCloseToPortal)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, TargetPos.position, Speed * Time.deltaTime);
+            return;
+        }
         //float xMove = Input.GetAxis("Horizontal");
         //Vector2 newPos = gameObject.transform.position;
         //newPos.x += xMove * Speed * Time.deltaTime;
@@ -40,8 +51,8 @@ public class PlayerBehaviour : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.W)  && Grounded))
         {
-            rb.AddForce(Vector2.up * JumpForce * 1.2f);
-           
+            rb.AddForce(Vector2.up * JumpForce * 1.25f);
+            Run.Play("Jump");
 
         }
 
@@ -94,39 +105,39 @@ public class PlayerBehaviour : MonoBehaviour
         //    }
         //}
 
-        if (Input.GetMouseButtonDown(0))
-        {
-             if (MB.Mana.value >= 3)
-            {
-                FirePoint.Fire();
-                MB.Mana.value -= 3;
-            }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //     if (MB.Mana.value >= 3)
+        //    {
+        //        FirePoint.Fire();
+        //        MB.Mana.value -= 3;
+        //    }
 
-        }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Q)){
+        //if (Input.GetKeyDown(KeyCode.Q)){
 
            
-            if (MB.Mana.value >=3)
-            {
-                FirePoint.FireAbilityOne();
-                MB.Mana.value -= 3;
-            }
-        }
+        //    if (MB.Mana.value >=3)
+        //    {
+        //        FirePoint.FireAbilityOne();
+        //        MB.Mana.value -= 3;
+        //    }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (MB.Mana.value >= 3)
-            {
-                FirePoint.FireAbilityTwo();
-                MB.Mana.value -= 3;
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.Space) && IsFlying == true)
-        {
-            rb.velocity = Vector2.zero;
-            IsFlying = false;
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    if (MB.Mana.value >= 3)
+        //    {
+        //        FirePoint.FireAbilityTwo();
+        //        MB.Mana.value -= 3;
+        //    }
+        //}
+        //if (Input.GetKeyUp(KeyCode.Space) && IsFlying == true)
+        //{
+        //    rb.velocity = Vector2.zero;
+        //    IsFlying = false;
+        //}
 
     }
 
@@ -135,11 +146,13 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             Grounded = true;
+            Run.Play("PlayerRun");
         }
 
         if (collision.gameObject.tag == "Platform")
         {
             Grounded = true;
+            Run.Play("PlayerRun");
         }
 
         if (collision.gameObject.tag == "Respawn")
@@ -149,6 +162,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         Debug.Log("I'm colliding yay!");
+        //AudioSource.PlayClipAtPoint(DeathSound);
     }
 
 
@@ -169,12 +183,12 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    void StopFlying()
-    {
-        rb.velocity = Vector2.zero;
-        IsFlying = false;
-        CurrentFlyInterval = FlyInterval;
-        StopFly = false;
-    }
+    //void StopFlying()
+    //{
+    //    rb.velocity = Vector2.zero;
+    //    IsFlying = false;
+    //    CurrentFlyInterval = FlyInterval;
+    //   // StopFly = false;
+    //}
 
 }

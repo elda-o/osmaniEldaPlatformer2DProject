@@ -11,7 +11,9 @@ public class MainMenuController : MonoBehaviour
     }
     public void StartGame()
     {
+        TimerScript.Instance.StartTimer();
         SceneManager.LoadScene(1);
+        TimerScript.Instance.CurrentTime = 1;
     }
 
     public void QuitGame()
