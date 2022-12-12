@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GalaxyGameController : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class GalaxyGameController : MonoBehaviour
             Application.Quit();
 
         }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
+
 
 }

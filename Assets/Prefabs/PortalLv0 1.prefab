@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.30302048, y: 1.7985826}
+  m_Offset: {x: 3.6491623, y: 1.7985821}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.581066, y: 21.897652}
+  m_Size: {x: 9.27648, y: 21.897652}
   m_EdgeRadius: 0
 --- !u!114 &5423741691331310419
 MonoBehaviour:
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: -831534655990996399}
   m_Layer: 0
   m_Name: PortalLv0 1
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,8 +187,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.591803, y: -0.08362633}
-  m_Size: {x: 12.705689, y: 26.162243}
+  m_Offset: {x: 0.1904845, y: -0.08362673}
+  m_Size: {x: 7.9030213, y: 26.162243}
   m_Direction: 0
 --- !u!61 &1935219446946259511
 BoxCollider2D:
@@ -203,7 +203,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.707407, y: -1.1328413}
+  m_Offset: {x: 3.3965156, y: -1.1328411}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -214,7 +214,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 29.957378, y: 16.311384}
+  m_Size: {x: 15.749533, y: 16.311384}
   m_EdgeRadius: 0
 --- !u!114 &-831534655990996399
 MonoBehaviour:

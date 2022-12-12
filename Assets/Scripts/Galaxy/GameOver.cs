@@ -31,6 +31,16 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene(1);
 
     }
+    public void MainMenu()
+    {
+        Debug.Log("bitch");
+
+        ScoreController.Scoring = 0;
+        TimerScript.Instance.CurrentTime = 1;
+
+        SceneManager.LoadScene(0);
+
+    }
 
     public void QuitGame()
     {

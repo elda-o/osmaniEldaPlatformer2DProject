@@ -106,9 +106,9 @@ public class GameController : MonoBehaviour
         //    }
         //}
 
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.R))
         {
-            Application.Quit();
+            SceneManager.LoadScene(1);
         }
     }
     //public void UpdateNE()

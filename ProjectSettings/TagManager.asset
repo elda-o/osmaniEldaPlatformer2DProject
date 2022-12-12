@@ -20,6 +20,7 @@ TagManager:
   - Enemy
   - Ability2
   - Music
+  - Portal
   layers:
   - Default
   - TransparentFX

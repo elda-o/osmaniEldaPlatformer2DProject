@@ -26,6 +26,11 @@ public class MonsterBehaviour : MonoBehaviour
             Debug.Log("motherfucker");
             Destroy(gameObject);
         }
+        else if (collision.tag == "Portal")
+        {
+            Debug.Log("portaldestroy");
+            Destroy(gameObject);
+        }
         else
         {
             Destroy(gameObject);

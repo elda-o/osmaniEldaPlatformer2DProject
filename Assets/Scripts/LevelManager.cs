@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke("SpawnPortal", UnityEngine.Random.Range(30, 60));
+        Invoke("SpawnPortal", UnityEngine.Random.Range(45, 80));
         Position = new Vector2(8.5f, 0);
     }
 

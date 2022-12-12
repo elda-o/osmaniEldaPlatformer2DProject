@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VoidGameController : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class VoidGameController : MonoBehaviour
 
             Application.Quit();
 
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(1);
         }
     }
     void SpawnEnemy()

@@ -335,6 +335,7 @@ MonoBehaviour:
   Run: {fileID: 0}
   IsCloseToPortal: 0
   TargetPos: {fileID: 0}
+  JumpSound: {fileID: 8300000, guid: f4a9adeab286d904bb4faf99cce30abf, type: 3}
 --- !u!212 &173370776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1280,8 +1281,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942055833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.61, y: 4.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.57, y: 4.31, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1575,8 +1576,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

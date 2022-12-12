@@ -38,7 +38,7 @@ public class TimerScript : MonoBehaviour
 
         if (Timer != null)
         {
-            if (Timer.Elapsed.Seconds > 5)
+            if (Timer.Elapsed.Seconds >20)
             {
                 RestartTimer();
             }

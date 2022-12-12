@@ -24,7 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Animator Run;
     public bool IsCloseToPortal;
     public Transform TargetPos;
-    //public AudioClip DeathSound;
+    public AudioClip JumpSound;
     //public AudioSource Death;
 
     // bool StopFly;
@@ -53,7 +53,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             rb.AddForce(Vector2.up * JumpForce * 1.25f);
             Run.Play("Jump");
-
+            AudioSource.PlayClipAtPoint(JumpSound, new Vector3(transform.position.x, transform.position.y, -4));
         }
 
         //if (Input.GetKeyDown(KeyCode.S))
