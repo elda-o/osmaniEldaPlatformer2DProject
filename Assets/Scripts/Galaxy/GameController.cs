@@ -108,7 +108,7 @@ public class GameController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
     }
     //public void UpdateNE()
