@@ -45,6 +45,7 @@ public class GameOver : MonoBehaviour
     public void QuitGame()
     {
             Application.Quit();
+        Debug.Log("Work?");
     }
 
     private void Update()
